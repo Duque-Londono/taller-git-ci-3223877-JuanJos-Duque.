@@ -3,17 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lista de Items</title>
+  <title>Taller Git & CI - SENA</title>
 </head>
 <body>
-  <h1>Mi lista</h1>
-  
-    <!-- Al hacer clic en el botón, se toma el valor del input y se agrega a la lista -->
-  <input id="texto" type="text" placeholder="Escribe un item" />
-  <button id="btnAgregar">Agregar</button>
+  <h1>Hola SENA</h1>
+  <p>Este es mi primer taller con Git y CI.</p>
 
+  <!-- Input + botón para agregar elementos -->
+  <input 
+    id="itemInput" 
+    type="text" 
+    placeholder="Escribe un item" 
+  />
+
+  <button id="agregarBtn">Agregar</button>
+
+  <!-- Lista donde se agregan los <li> -->
   <ul id="lista"></ul>
 
-  <script src="./app.js"></script>
+  <!-- Lógica de la aplicación -->
+  <script type="module" src="./app.js"></script>
 </body>
 </html>
