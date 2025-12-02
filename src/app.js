@@ -1,44 +1,38 @@
-export function suma(a, b) {
+// Función que agrega un elemento a la lista
+export function agregarItem(texto) {
+  // Obtener el elemento <ul id="lista">
+  const lista = document.getElementById("lista");
+
+  // Si no existe, no romper la app
+  if (!lista) return null;
+
+  // Crear el elemento <li>
+  const li = document.createElement("li");
+  li.textContent = texto;
+
+  // Agregar a la lista
+  lista.appendChild(li);
+
+  // Devolver el li para pruebas o usos posteriores
+  return li;
+}
+
+// Función de ejemplo para test unitario
+export function sumar(a, b) {
   return a + b;
 }
 
-export function agregarItem(texto) {
-  const lista = document.getElementById("lista");
-  if (!lista) return; // evita error si el elemento no existe
+// Registrar evento del botón para agregar items
+document.addEventListener("DOMContentLoaded", () => {
+  const boton = document.getElementById("agregarBtn");
+  const input = document.getElementById("itemInput");
 
-  const li = document.createElement("li");
-  li.textContent = texto;
-  lista.appendChild(li);
-  return li; // útil para tests futuros
-}
-
-
-// inicialización mínima
-document.addEventListener('DOMContentLoaded', () => {
-  const btn = document.getElementById('btnAgregar');
-  const input = document.getElementById('inputItem');
-  if (btn && input) {
-    btn.addEventListener('click', () => {
-      if (input.value.trim()) {
+  if (boton && input) {
+    boton.addEventListener("click", () => {
+      if (input.value.trim() !== "") {
         agregarItem(input.value.trim());
-        input.value = '';
+        input.value = "";
       }
     });
   }
-  console.log('App lista');
 });
-
-// Evento del botón "Agregar"
-const btn = document.getElementById("agregarBtn");
-const input = document.getElementById("texto");
-
-if (btn && input) {
-  btn.addEventListener("click", () => {
-    if (input.value.trim() !== "") {
-      agregarItem(input.value.trim());
-      input.value = ""; // limpiar después de agregar
-    }
-  });
-}
-
-
