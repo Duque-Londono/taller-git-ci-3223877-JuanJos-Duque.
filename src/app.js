@@ -3,12 +3,14 @@ export function suma(a, b) {
 }
 
 export function agregarItem(texto) {
-  const lista = document.getElementById('lista');
-  if (!lista) return;
-  const li = document.createElement('li');
+  const lista = document.getElementById("lista");
+  if (!lista) return null; // (se corregirá en commit siguiente)
+
+  const li = document.createElement("li");
   li.textContent = texto;
   lista.appendChild(li);
-  return li;
+
+  return li; // útil para pruebas o mejoras
 }
 
 // inicialización mínima
@@ -25,3 +27,5 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   console.log('App lista');
 });
+
+
