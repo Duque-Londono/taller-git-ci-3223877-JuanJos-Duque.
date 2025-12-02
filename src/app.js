@@ -4,14 +4,14 @@ export function suma(a, b) {
 
 export function agregarItem(texto) {
   const lista = document.getElementById("lista");
-  if (!lista) return null; // (se corregirá en commit siguiente)
+  if (!lista) return; // evita error si el elemento no existe
 
   const li = document.createElement("li");
   li.textContent = texto;
   lista.appendChild(li);
-
-  return li; // útil para pruebas o mejoras
+  return li; // útil para tests futuros
 }
+
 
 // inicialización mínima
 document.addEventListener('DOMContentLoaded', () => {
