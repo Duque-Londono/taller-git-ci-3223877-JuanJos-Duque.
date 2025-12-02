@@ -28,4 +28,17 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log('App lista');
 });
 
+// Evento del botón "Agregar"
+const btn = document.getElementById("agregarBtn");
+const input = document.getElementById("texto");
+
+if (btn && input) {
+  btn.addEventListener("click", () => {
+    if (input.value.trim() !== "") {
+      agregarItem(input.value.trim());
+      input.value = ""; // limpiar después de agregar
+    }
+  });
+}
+
 
