@@ -1,13 +1,13 @@
 // Función que agrega un elemento a la lista
 export function agregarItem(texto) {
   // Obtener el elemento <ul id="lista">
-  const lista = document.getElementById("lista");
+  const lista = document.getElementById('lista');
 
   // Si no existe, no romper la app
   if (!lista) return null;
 
   // Crear el elemento <li>
-  const li = document.createElement("li");
+  const li = document.createElement('li');
   li.textContent = texto;
 
   // Agregar a la lista
@@ -23,15 +23,15 @@ export function sumar(a, b) {
 }
 
 // Registrar evento del botón para agregar items
-document.addEventListener("DOMContentLoaded", () => {
-  const boton = document.getElementById("agregarBtn");
-  const input = document.getElementById("itemInput");
+document.addEventListener('DOMContentLoaded', () => {
+  const boton = document.getElementById('agregarBtn');
+  const input = document.getElementById('itemInput');
 
   if (boton && input) {
-    boton.addEventListener("click", () => {
-      if (input.value.trim() !== "") {
+    boton.addEventListener('click', () => {
+      if (input.value.trim() !== '') {
         agregarItem(input.value.trim());
-        input.value = "";
+        input.value = '';
       }
     });
   }
